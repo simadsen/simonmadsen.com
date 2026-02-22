@@ -1,0 +1,134 @@
+/* ——— Tokens ——— */
+:root {
+  --color-bg:              #eadfc6;
+  --color-card:            #fffff6;
+  --color-name:            #d77245;
+  --color-secondary:       #b3c5a3;
+  --color-btn-bg:          rgba(149, 167, 133, 0.08);
+  --color-btn-bg-hover:    rgba(149, 167, 133, 0.16);
+  --color-btn-icon-hover:  #778967;
+  --radius-card:           32px;
+  --radius-btn:            16px;
+  --shadow-card:           0 4px 16px rgba(165, 160, 149, 0.15);
+}
+
+/* ——— Reset ——— */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ——— Base ——— */
+body {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ——— Card ——— */
+.card {
+  position: relative;
+  background-color: var(--color-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 96px 64px;
+  width: 600px;
+  min-height: 370px;
+  max-width: calc(100vw - 64px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ——— Eyebrow ——— */
+.eyebrow {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 24px;
+  letter-spacing: 0.48px;
+  color: var(--color-secondary);
+}
+
+/* ——— Name ——— */
+.name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 45px;
+  letter-spacing: -1.44px;
+  color: var(--color-name);
+}
+
+/* ——— Title ——— */
+.title {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 24px;
+  letter-spacing: 0.48px;
+  color: var(--color-secondary);
+}
+
+/* ——— Title link ——— */
+.title-link {
+  color: #778967;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+
+.title-link:hover {
+  color: var(--color-name);
+}
+
+/* ——— Social ——— */
+.social {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 8px;
+  padding: 16px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: var(--radius-btn);
+  background-color: var(--color-btn-bg);
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.social-btn i {
+  font-size: 18px;
+  color: var(--color-secondary);
+  transition: color 0.15s ease;
+}
+
+.social-btn:hover {
+  background-color: var(--color-btn-bg-hover);
+}
+
+.social-btn:hover i {
+  color: var(--color-btn-icon-hover);
+}
+
+/* ——— Mobile ——— */
+@media (max-width: 600px) {
+  .card {
+    padding: 64px 32px 128px;
+  }
+}
