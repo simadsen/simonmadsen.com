@@ -40,6 +40,7 @@ body {
   max-width: calc(100vw - 64px);
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 /* ——— Card body ——— */
@@ -218,6 +219,7 @@ footer {
     font-size: 32px;
     line-height: 38px;
     align-self: center;
+    min-width: 0;
   }
 
   .avatar {
