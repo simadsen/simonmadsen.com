@@ -112,8 +112,7 @@ body {
   transition: background-color 0.15s ease;
 }
 
-.social-btn i {
-  font-size: 18px;
+.social-btn svg {
   color: var(--color-secondary);
   transition: color 0.15s ease;
 }
@@ -122,7 +121,7 @@ body {
   background-color: var(--color-btn-bg-hover);
 }
 
-.social-btn:hover i {
+.social-btn:hover svg {
   color: var(--color-btn-icon-hover);
 }
 
