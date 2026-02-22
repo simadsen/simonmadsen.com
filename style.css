@@ -1,15 +1,15 @@
 /* ——— Tokens ——— */
 :root {
-  --color-bg:              #eadfc6;
-  --color-card:            #fffff6;
-  --color-name:            #d77245;
-  --color-secondary:       #b3c5a3;
-  --color-btn-bg:          rgba(149, 167, 133, 0.08);
-  --color-btn-bg-hover:    rgba(149, 167, 133, 0.16);
-  --color-btn-icon-hover:  #778967;
-  --radius-card:           32px;
-  --radius-btn:            16px;
-  --shadow-card:           0 4px 16px rgba(165, 160, 149, 0.15);
+  --orange-red:    #d77245;
+  --yellow:        #f3c46d;
+  --light-green:   #95a785;
+  --dark-green:    #778967;
+  --white-almost:  #fffff6;
+  --beige:         #eadfc6;
+  --sand:          #ccc5b3;
+  --radius-card:   32px;
+  --radius-btn:    16px;
+  --shadow-card:   0 4px 16px rgba(165, 160, 149, 0.15);
 }
 
 /* ——— Reset ——— */
@@ -24,23 +24,39 @@ body {
   min-height: 100dvh;
   display: grid;
   place-items: center;
-  background-color: var(--color-bg);
+  background-color: var(--beige);
   -webkit-font-smoothing: antialiased;
 }
 
 /* ——— Card ——— */
 .card {
   position: relative;
-  background-color: var(--color-card);
+  background-color: var(--white-almost);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
-  padding: 96px 64px;
+  padding: 96px 48px;
   width: 600px;
   min-height: 370px;
   max-width: calc(100vw - 64px);
   display: flex;
+  align-items: center;
+}
+
+/* ——— Card body ——— */
+.card-body {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+}
+
+/* ——— Text stack ——— */
+.text-stack {
+  flex: 1;
+  display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: space-between;
 }
 
 /* ——— Eyebrow ——— */
@@ -51,7 +67,7 @@ body {
   font-style: italic;
   line-height: 24px;
   letter-spacing: 0.48px;
-  color: var(--color-secondary);
+  color: var(--light-green);
 }
 
 /* ——— Name ——— */
@@ -61,7 +77,7 @@ body {
   font-weight: 600;
   line-height: 45px;
   letter-spacing: -1.44px;
-  color: var(--color-name);
+  color: var(--orange-red);
 }
 
 /* ——— Title ——— */
@@ -72,19 +88,35 @@ body {
   font-style: italic;
   line-height: 24px;
   letter-spacing: 0.48px;
-  color: var(--color-secondary);
+  color: var(--light-green);
 }
 
 /* ——— Title link ——— */
 .title-link {
-  color: #778967;
+  color: var(--dark-green);
   text-decoration: underline;
   text-underline-offset: 2px;
   transition: color 0.15s ease;
 }
 
 .title-link:hover {
-  color: var(--color-name);
+  color: var(--orange-red);
+}
+
+/* ——— Avatar ——— */
+.avatar {
+  width: 128px;
+  height: 128px;
+  flex-shrink: 0;
+  border-radius: var(--radius-btn);
+  overflow: hidden;
+  padding: 14px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* ——— Social ——— */
@@ -107,27 +139,94 @@ body {
   height: 42px;
   flex-shrink: 0;
   border-radius: var(--radius-btn);
-  background-color: var(--color-btn-bg);
+  background-color: rgba(149, 167, 133, 0.08);
   text-decoration: none;
   transition: background-color 0.15s ease;
 }
 
 .social-btn svg {
-  color: var(--color-secondary);
+  color: var(--light-green);
   transition: color 0.15s ease;
 }
 
 .social-btn:hover {
-  background-color: var(--color-btn-bg-hover);
+  background-color: rgba(149, 167, 133, 0.16);
 }
 
 .social-btn:hover svg {
-  color: var(--color-btn-icon-hover);
+  color: var(--dark-green);
+}
+
+/* ——— Footer ——— */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--light-green);
+  pointer-events: none;
+}
+
+.footer-copyright {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer-dot {
+  color: var(--sand);
 }
 
 /* ——— Mobile ——— */
 @media (max-width: 600px) {
   .card {
-    padding: 64px 32px 128px;
+    padding: 64px 32px;
+    align-items: flex-start;
+  }
+
+  .card-body {
+    display: grid;
+    grid-template-areas:
+      "eyebrow eyebrow"
+      "avatar  name"
+      "title   title";
+    grid-template-columns: 128px 1fr;
+    column-gap: 16px;
+    row-gap: 12px;
+    align-items: start;
+  }
+
+  .text-stack {
+    display: contents;
+  }
+
+  .eyebrow {
+    grid-area: eyebrow;
+  }
+
+  .name {
+    grid-area: name;
+    font-size: 32px;
+    line-height: 38px;
+    align-self: center;
+  }
+
+  .avatar {
+    grid-area: avatar;
+    width: 128px;
+    height: 128px;
+  }
+
+  .title {
+    grid-area: title;
   }
 }
