@@ -39,7 +39,7 @@ body {
   min-height: 370px;
   max-width: calc(100vw - 64px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
 }
 
@@ -222,6 +222,7 @@ footer {
     font-size: 36px;
     line-height: 36px;
     min-width: 0;
+    padding-bottom: 8px;
   }
 
   .avatar {
