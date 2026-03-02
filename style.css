@@ -92,7 +92,7 @@ main {
   font-size: 48px;
   font-weight: 700;
   line-height: 48px;
-  letter-spacing: -0.96px;
+  letter-spacing: -0.48px;
   color: var(--orange-red);
 }
 
@@ -161,11 +161,11 @@ main {
 }
 
 .social-btn:hover {
-  background-color: rgba(149, 167, 133, 0.16);
+  background-color: rgba(215, 114, 69, 0.16);
 }
 
 .social-btn:hover svg {
-  color: var(--dark-green);
+  color: var(--orange-red);
 }
 
 /* ——— Tooltip ——— */
@@ -274,9 +274,9 @@ footer {
 
   .name {
     grid-area: name;
-    font-size: 36px;
-    line-height: 36px;
-    letter-spacing: -0.72px;
+    font-size: 42px;
+    line-height: 42px;
+    letter-spacing: -0.42px;
     min-width: 0;
     padding-bottom: 8px;
   }
