@@ -10,7 +10,7 @@
   --light-beige:   #fef3da;
   --radius-card:   32px;
   --radius-btn:    16px;
-  --shadow-card:   0 4px 16px rgba(165, 160, 149, 0.15);
+  --shadow-card:   0 2px 8px rgba(165, 160, 149, 0.3);
 }
 
 /* ——— Reset ——— */
@@ -34,6 +34,10 @@ body {
 }
 
 /* ——— Card ——— */
+main {
+  perspective: 800px;
+}
+
 .card {
   position: relative;
   background-color: var(--white-almost);
@@ -45,6 +49,8 @@ body {
   max-width: calc(100vw - 64px);
   display: flex;
   align-items: flex-start;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+  will-change: transform, box-shadow;
 }
 
 /* ——— Card body ——— */

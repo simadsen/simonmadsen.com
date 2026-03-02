@@ -76,6 +76,24 @@
       var colors = ['#95a785', '#f3c46d', '#d77245', '#eadfc6'];
       var avatar = document.getElementById('avatar');
       avatar.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+      var card = document.querySelector('.card');
+      var maxTilt = 3;
+
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        var rotateY = -x * maxTilt;
+        var rotateX = y * maxTilt;
+        card.style.transform = 'rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateZ(10px)';
+        card.style.boxShadow = '0 6px 18px rgba(165, 160, 149, 0.16)';
+      });
+
+      card.addEventListener('mouseleave', function () {
+        card.style.transform = '';
+        card.style.boxShadow = '';
+      });
     })();
   </script>
 </body>
