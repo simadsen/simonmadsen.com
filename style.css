@@ -389,6 +389,7 @@ footer {
 
 .footer-dot {
   color: var(--sand);
+  transition: color 0.3s ease;
 }
 
 /* ——— Mobile ——— */
