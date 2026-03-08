@@ -338,6 +338,7 @@ footer {
 @media (max-width: 600px) {
   .card {
     padding: 64px 32px;
+    max-width: calc(100vw - 48px);
     align-items: stretch;
   }
 
@@ -361,6 +362,8 @@ footer {
   .eyebrow {
     grid-area: eyebrow;
     padding-top: 8px;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .name {
@@ -389,5 +392,12 @@ footer {
     right: auto;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+/* ——— Small phones ——— */
+@media (max-width: 400px) {
+  .card {
+    padding: 48px 24px;
   }
 }
